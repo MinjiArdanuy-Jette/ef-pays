@@ -40,16 +40,31 @@ add_action('wp_enqueue_scripts', 'eddym_enqueue');
 function creer_bouton_pays()
 {
   $articles = get_posts();
-  $contenu = '';
-  foreach ($articles as $article) {
-    // echo $article;
-  }
+
+  // foreach ($articles as $article) {
+  //   // echo $article;
+  // }
   // $contenu = '<button' . $article . '</button>';
   // foreach ($categories as $category) {
   //   $nom = $category->name;
   //   $id = $category->term_id;
   //   // $contenu .= '<button''</button>';
   //}
+
+  $contenu = '<div><button>France</button>
+  <button>États-Unis</button>
+  <button>Canada</button>
+  <button>Argentine</button>
+  <button>Chili</button>
+  <button>Belgique</button>
+  <button>Maroc</button>
+  <button>Mexique</button>
+  <button>Japon</button>
+  <button>Italie</button>
+  <button>Islande</button>
+  <button>Chine</button>
+  <button>Grèce</button>
+  <button>Suisse</button></div>';
 
   return $contenu;
 }
