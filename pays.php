@@ -51,7 +51,7 @@ function creer_bouton_pays()
   //   // $contenu .= '<button''</button>';
   //}
 
-  $contenu = '<div><button>France</button>
+  $contenu = '<div class = "boutons-pays"><button>France</button>
   <button>États-Unis</button>
   <button>Canada</button>
   <button>Argentine</button>

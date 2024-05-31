@@ -43,3 +43,10 @@
     ); /* Déplacement vers la gauche de la largeur totale des cartes, incluant les marges */
   }
 }
+
+//Épreuve Finale
+.boutons-pays {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

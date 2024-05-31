@@ -40,4 +40,9 @@
   to {
     transform: translateX(-40%); /* Déplacement vers la gauche de la largeur totale des cartes, incluant les marges */
   }
+}
+.boutons-pays {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */
