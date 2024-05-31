@@ -1,15 +1,14 @@
 <?php
 /**
- * Package Voyage
+ * Package Pays
  * Version 1.0.0
  */
 /*
-Plugin name: Voyage
-Plugin uri: https://github.com/eddytuto
+Plugin name: Pays
+Plugin uri: https://github.com/e0958030
 Version: 1.0.0
 Description: Permet d'afficher les destinations qui répondent à certains critères
 */
-echo header("Access-Control-Allow-Origin: http://localhost");
 function eddym_enqueue()
 {
   // filemtime // retourne en milliseconde le temps de la dernière modification
@@ -38,18 +37,28 @@ function eddym_enqueue()
 }
 add_action('wp_enqueue_scripts', 'eddym_enqueue');
 /* Création de la liste des destinations en HTML */
-function creation_destinations()
+function creer_bouton_pays()
 {
-  $contenu = '<select id="filtres">
-  <option value="4"selected>La catégorie qui plaît ce mois-ci</option>
-  <option value="16">Les rabais du mois</option>
-  <option value="17">Les lieux les plus visités</option>
-</select>
-  <div class = "slider">
-    <div class="contenu__restapi">
-    </div>
-    </div>';
+  $articles = get_posts();
+  $contenu = '';
+  foreach ($articles as $article) {
+    // echo $article;
+  }
+  // $contenu = '<button' . $article . '</button>';
+  // foreach ($categories as $category) {
+  //   $nom = $category->name;
+  //   $id = $category->term_id;
+  //   // $contenu .= '<button''</button>';
+  //}
+
   return $contenu;
 }
 
-add_shortcode('em_destination', 'creation_destinations');
+function creation_destinations()
+{
+  $contenu = creer_bouton_pays() . '<div class="contenu__restapi"></div>';
+  return $contenu;
+}
+
+add_shortcode('maj_pays', 'creation_destinations');
+?>

@@ -1,0 +1,43 @@
+@charset "UTF-8";
+.slider {
+  overflow: hidden;
+  display: flex;
+}
+
+.contenu__restapi {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  animation: 10s defilementHorizontal infinite linear alternate;
+  margin-right: 64rem; /* Ajouter une marge droite pour l'espace */
+}
+
+.restapi__carte {
+  flex: 1 0 250px;
+  background-color: hsl(250, 100%, 15%);
+  border: 2px solid #65008e;
+  padding: 1rem;
+  text-align: center;
+}
+
+.restapi__carte h2 {
+  color: hsl(60, 96%, 67%);
+}
+
+.restapi__carte p {
+  color: white;
+  line-height: 2rem;
+}
+
+.slider:hover .contenu__restapi {
+  animation-play-state: paused;
+}
+
+@keyframes defilementHorizontal {
+  from {
+    transform: translateX(40%); /* Déplacement initial vers la gauche */
+  }
+  to {
+    transform: translateX(-40%); /* Déplacement vers la gauche de la largeur totale des cartes, incluant les marges */
+  }
+}/*# sourceMappingURL=style.css.map */
