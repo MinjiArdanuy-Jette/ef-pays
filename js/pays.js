@@ -1,12 +1,11 @@
 (function () {
   console.log("rest API");
   // URL de l'API REST de WordPress
-  let categorie = 3;
-  let lien__categorie = document.querySelectorAll(".lien__categorie");
-  for (const elm of lien__categorie) {
+  let lien__boutons = document.querySelectorAll(".boutons-pays");
+  for (const elm of lien__boutons) {
     elm.addEventListener("mousedown", function () {
       const id = elm.id.split("_")[1];
-      console.log(id);
+      // console.log(id);
       let url = `https://gftnth00.mywhc.ca/tim06/wp-json/wp/v2/posts?categories=${id}`;
       mon_fetch(url);
     });
@@ -38,7 +37,8 @@
         data.forEach(function (article) {
           let titre = article.title.rendered;
           let contenu = article.content.rendered;
-          console.log(titre);
+          let imageAvant = article.featured_media.rendered;
+          console.log(imageAvant);
           //Tronquer les mots des cartes
           let contenuTronque = tronquerContenu(contenu, 30);
           let carte = document.createElement("div");
@@ -57,12 +57,12 @@
       });
 
     //Fonction pour tronquer le contenu des cartes
-    function tronquerContenu(content, numMots) {
-      let mots = content.split(" ");
+    function tronquerContenu(texte, numMots) {
+      let mots = texte.split(" ");
       if (mots.length > numMots) {
         return mots.slice(0, numMots).join(" ") + "...";
       }
-      return content;
+      return texte;
     }
   }
 });

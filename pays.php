@@ -21,15 +21,15 @@ function eddym_enqueue()
   $version_css = filemtime(plugin_dir_path(__FILE__) . "style.css");
   $version_js = filemtime(plugin_dir_path(__FILE__) . "js/pays.js");
   wp_enqueue_style(
-    'em_plugin_voyage_css',
+    'em_plugin_pays_css',
     plugin_dir_url(__FILE__) . "style.css",
     array(),
     $version_css
   );
 
   wp_enqueue_script(
-    'em_plugin_voyage_js',
-    plugin_dir_url(__FILE__) . "js/voyage.js",
+    'em_plugin_pays_js',
+    plugin_dir_url(__FILE__) . "js/pays.js",
     array(),
     $version_js,
     true
@@ -40,16 +40,17 @@ add_action('wp_enqueue_scripts', 'eddym_enqueue');
 function creer_bouton_pays()
 {
   $articles = get_posts();
-
-  // foreach ($articles as $article) {
-  //   // echo $article;
-  // }
-  // $contenu = '<button' . $article . '</button>';
+  $contenu = '';
+  foreach ($articles as $article) {
+    // $titre = $article->post_name;
+    // echo $titre;
+  }
+  // $contenu = '<button' . $titre . '</button>';
   // foreach ($categories as $category) {
   //   $nom = $category->name;
   //   $id = $category->term_id;
   //   // $contenu .= '<button''</button>';
-  //}
+  // }
 
   $contenu = '<div class = "boutons-pays"><button>France</button>
   <button>États-Unis</button>
